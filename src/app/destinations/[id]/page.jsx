@@ -5,6 +5,7 @@ import { FaRegCalendar } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
 import EditModal from '@/components/EditModal';
 import DeleteAlert from '@/components/DeleteAlert';
+import BookingCard from '@/components/ui/BookingCard'
 
 const DestinationDetailsPage = async({params}) => {
   const {id} = await params
@@ -51,6 +52,7 @@ const DestinationDetailsPage = async({params}) => {
 
         <p>{description}</p>
       </div>
+      <BookingCard destination={destination}/>
     </div>
   )
 }
