@@ -31,7 +31,7 @@ const LoginPage = () => {
             router.push("/");
         }
         if (error) {
-            alert("Login Failed");
+            alert("Login Failed" error.message);
         }
     };
     const handleGoogleSignIn = async () => {
