@@ -12,9 +12,10 @@ import {
   TextField,
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const SignUpPage = () => {
+  const router = useRouter()
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,7 +31,7 @@ const SignUpPage = () => {
 
     if (data) {
       alert("Signup successfully")
-      redirect("/login");
+      router.push("/login")
     }
 
     if (error) {
@@ -41,7 +42,8 @@ const SignUpPage = () => {
 
   const handleGoogleSignin = async() => {
     await authClient.signIn.social({
-        provider: "google"
+        provider: "google",
+        callbackURL: "/",
     })
     alert("Sign up successfully")
   }
