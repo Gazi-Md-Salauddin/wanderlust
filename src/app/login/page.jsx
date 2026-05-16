@@ -34,10 +34,10 @@ const LoginPage = () => {
             alert("Login Failed", error.message);
         }
     };
-    const handleGoogleSignIn = async () => {
+    const handleGoogleSignin = async () => {
         await authClient.signIn.social({
             provider: "google",
-            callbackURL: "/"
+            callbackURL: "/",
         });
     };
 
@@ -114,7 +114,7 @@ const LoginPage = () => {
             </div>
             <div>
                 <Button
-                    onClick={handleGoogleSignIn}
+                    onClick={handleGoogleSignin}
                     variant="outline"
                     className={"w-full rounded-none"}
                 >
